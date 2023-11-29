@@ -7,5 +7,6 @@ router.get('/procrear', function(req, res, next){
 });
 
 router.post('/prosend', crearProducto);
+router.get('/proget', getProductos);
 
 module.exports = router;
