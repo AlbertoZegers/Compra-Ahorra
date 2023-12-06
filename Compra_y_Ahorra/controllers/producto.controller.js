@@ -1,5 +1,48 @@
 const ProductoModel = require('./../models/Producto');
 
+const updateProducto = async (req, res) => {
+    try {
+        const {id} = req.params
+        const {nombre, stock, precio, fechaLlegada, descripcion}= req.body;
+        const producto = await ProductoModel.findByPk(id);
+        producto.nombre = nombre;
+        producto.stock = stock;
+        producto.precio = precio;
+        producto.fechaLlegada = fechaLlegada;
+        producto.descripcion = descripcion;
+        await producto.save();
+        res.status(200).json({
+            status: 200,
+            response: "¡Producto editado exitosamente!"
+        });
+    } catch (error) {
+        return res.status(500).json({
+            status: 500,
+            response: error
+        });
+    }
+}
+
+const borrarProducto = async (req, res) => {
+    try {
+        const {id} = req.params
+        await ProductoModel.destroy({
+            where: {
+                id,
+            },
+        });
+        res.status(200).json({
+            status:200,
+            response: "¡Producto borrado exitosamente!"
+        });
+    } catch (error) {
+        return res.status(500).json({
+            status: 500,
+            response: error
+        });
+    }
+}
+
 const getProductos = async (req, res) => {
     const productos = await  ProductoModel.findAll();
     res.json(productos);
@@ -53,4 +96,4 @@ const crearProducto = async (req, res) => {
     
 }
 
-module.exports = {crearProducto, getProducto, getProductos}
+module.exports = {crearProducto, getProducto, getProductos, borrarProducto, updateProducto}
