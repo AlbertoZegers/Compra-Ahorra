@@ -5,9 +5,9 @@ const localStorage = new LocalStorage('./local');
 
 const crearUsuario = async (req, res) => {
     try {
-        const {usuario, contraseña, email} = req.body;
+        const {usuario, contraseña, email, rol} = req.body;
         await UsuarioModel.create({
-            usuario, contraseña, email
+            usuario, contraseña, email, rol
         });
         res.status(200).json({
             status: 200,
