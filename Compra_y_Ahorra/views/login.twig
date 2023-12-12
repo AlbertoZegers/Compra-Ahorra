@@ -10,4 +10,18 @@
     <br>
     <a href="{{irAdm}}">Ingresar como Administrador</a>
 </nav>
+<div class="container">
+    <div class="contentForm">
+        <form id="productForm">
+            <label for="productName">Nombre de usuario:</label>
+            <input type="text" id="productName" name="productName" required>
+
+            <label for="stock">Contraseña:</label>
+            <input type="text" id="stock" name="stock" required>
+
+            <button type="button" onclick="loginUser()">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
+<script src="/javascripts/scriptLU.js"></script>
 {% endblock %}

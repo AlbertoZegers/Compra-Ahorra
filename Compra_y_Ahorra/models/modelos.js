@@ -1,5 +1,6 @@
 const sequelize = require('./../database/db');
 const ProductoModel = require('./Producto');
+const UsuarioModel = require('./Usuarios');
 
 async function conexion(){
     try {

@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("productName").value = producto.nombre;
         document.getElementById("stock").value = producto.stock;
         document.getElementById("price").value = producto.precio;
-        document.getElementById("arrivalDate").value = producto.fechaLlegada; 
+        console.log(producto.fechaLlegada);
+        let fecha = producto.fechaLlegada.substring(0, 10);
+        document.getElementById("arrivalDate").value = fecha; 
         document.getElementById("description").value = producto.descripcion;
     })
 });

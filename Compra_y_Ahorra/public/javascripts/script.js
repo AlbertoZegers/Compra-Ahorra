@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stock.textContent = `Disponibles: ${producto.stock}`;
     
             const precio = document.createElement("p");
-            precio.textContent = `$${producto.precio.toFixed(2)}`;
+            precio.textContent = `$${producto.precio}`;
     
             const ver = document.createElement("button");
             ver.textContent = "Ver detalle";
