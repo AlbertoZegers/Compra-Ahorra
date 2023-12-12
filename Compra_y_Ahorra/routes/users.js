@@ -8,7 +8,7 @@ const localStorage = new LocalStorage('./local');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   localStorage.clear();
-  res.render('login', { volver: '/', ir: '/users/crear', irAdm: '/viewAdm' });
+  res.render('login', { volver: '/', ir: '/users/crear' });
 });
 
 router.get('/crear', function(req, res, next){

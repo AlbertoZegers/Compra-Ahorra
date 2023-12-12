@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/viewAdm', function(req, res, next){
-  res.render('indexAdm', { title: 'Compra & Ahorra', iruser: '/users', irproduct: '/products/procrear', volver: '/' });
+  usuario=localStorage.Usuario;
+  res.render('indexAdm', { title: 'Compra & Ahorra', iruser: '/users', irproduct: '/products/procrear', user: usuario });
 });
 
 module.exports = router;
