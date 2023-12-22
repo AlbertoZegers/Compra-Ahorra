@@ -12,7 +12,7 @@ const UsuarioModel = sequelize.define('usuarios', {
         allowNull: false,
         unique: true,
     },
-    contraseña: {
+    contraseñaEncriptada: {
         type: DataTypes.STRING,
         allowNull: false
     },
